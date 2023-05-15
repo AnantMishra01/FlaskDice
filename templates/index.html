@@ -1,14 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Flask Dice Roller</title>
-    </head>
-    <body>
-        <h1>Welcome to Flask Dice Roller!</h1>
-        <p>Click the button below to roll a dice:</p>
-        <form action="{{ url_for('roll_dice') }}" method="get">
-            <button type="submit">Roll Dice</button>
-        </form>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Flask Dice Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Flask Dice Game</h1>
+      <p>Roll the dice and see what you get!</p>
+      <div id="dice-container">
+        <img id="dice" src="{{ url_for('static', filename='dice/dice1.png') }}" alt="dice">
+      </div>
+      <button id="roll-button" onclick="rollDice()">Roll</button>
+      <p class="github-link">Created by <a href="https://github.com/AnantMishra01" target="_blank">Anant Mishra</a>. Check out the <a href="https://github.com/AnantMishra01/FlaskDice" target="_blank">GitHub repository</a>.</p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
 </html>
-
