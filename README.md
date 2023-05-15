@@ -26,33 +26,6 @@ pip install flask
 python app.py
 4. Open your web browser and navigate to `http://localhost:5000` to access the website
 
-## Project Structure
-
-The project structure is as follows:
-├── app.py # Flask app code
-
-├── templates
-
-│ ├── index.html # Main page template
-
-│ └── roll_dice.html # Dice rolling page template
-
-└── static
-
-└── dice # Dice images folder
-
-├── dice1.png
-
-├── dice2.png
-
-├── dice3.png
-
-├── dice4.png
-
-├── dice5.png
-
-└── dice6.png
-
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please feel free to open an issue or submit a pull request.
