@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Flask Dice Roller</title>
+    </head>
+    <body>
+        <h1>Welcome to Flask Dice Roller!</h1>
+        <p>Click the button below to roll a dice:</p>
+        <form action="{{ url_for('roll_dice') }}" method="get">
+            <button type="submit">Roll Dice</button>
+        </form>
+    </body>
+</html>
+
