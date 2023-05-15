@@ -1,0 +1,79 @@
+<style>
+  #dice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  #dice {
+    max-width: 100%;
+  }
+
+  #roll-button {
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+  }
+
+  @media only screen and (min-width: 600px) {
+    #dice-container {
+      margin-bottom: 2em;
+    }
+
+    #dice {
+      max-width: 80%;
+    }
+
+    #roll-button {
+      font-size: 1.5em;
+      padding: 1em 2em;
+      border-radius: 1em;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    #dice-container {
+      margin-bottom: 4em;
+    }
+
+    #dice {
+      max-width: 50%;
+    }
+
+    #roll-button {
+      font-size: 2em;
+      padding: 1.5em 3em;
+      border-radius: 1.5em;
+    }
+  }
+</style>
+
+<div id="dice-container">
+  <img id="dice" src="{{ url_for('static', filename='dice/dice1.png') }}" alt="dice">
+</div>
+
+<div style="display: flex; justify-content: center;">
+  <button id="roll-button" onclick="rollDice()">Roll Again</button>
+</div>
+
+<script>
+function rollDice() {
+  var dice = document.getElementById("dice");
+  var result = Math.floor(Math.random() * 6) + 1;
+  var frames = ["dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png"];
+  var i = 0;
+  var interval = setInterval(function() {
+    dice.src = "{{ url_for('static', filename='dice/') }}" + frames[i];
+    i++;
+    if (i >= frames.length) {
+      clearInterval(interval);
+      dice.src = "{{ url_for('static', filename='dice/dice') }}" + result + ".png";
+    }
+  }, 100);
+}
+</script>
+
