@@ -19,7 +19,7 @@ You can access the live demo of the website [here](https://anantmishra01.pythona
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/your-username/your-repo.git
+gh repo clone AnantMishra01/FlaskDice
 2. Install the required dependencies:
 pip install flask
 3. Run the Flask app:
