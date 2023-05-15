@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import random
+import os
 app = Flask(__name__)
 @app.route('/')
 def index():
@@ -9,4 +10,4 @@ def roll_dice():
     result = random.randint(1, 6)
     return render_template('roll_dice.html', result=result)
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=False, port=os.getenv("PORT", default=5000))
